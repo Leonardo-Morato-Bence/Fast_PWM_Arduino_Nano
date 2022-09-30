@@ -1,0 +1,20 @@
+Informações
+===========
+
+Frequência do PWM: 31,250KHz.
+Timer: 0.
+Tamanho do timer: 8 bits (0...255).
+
+DDRD: Registrador que comanda as portas D (D0...D7).
+ PD6: Coloque 1 para definir como saída e 0 para definir como entrada, PD6 é onde se localiza OC0A.
+
+TCCR0A: Registrador que define parte das configurações do timer 0.
+ COM0A1: Quando o timer 0 é configurado para Fast PWM, ao colocar 1 no COM0A1 a saída OC0A será 1 
+         quando o valor no timer for menor do que o valor de OCR0A e 0 quando for maior ou igual.
+ WGM01/WGM00: Seleciona o modo de operação do timer em questão, quando ambos possuem o valor 1 o
+              timer funciona no modo Fast PWM não invertido.
+
+TCCR0B: Registrador que define outra parte das configurações do timer 0.
+ CS00: Juntamente com CS02 e CS01 são utilizados para controlar o clock do timer.
+
+OCR0A: O valor que será comparado com o valor do timer para gerar o duty cycle.
